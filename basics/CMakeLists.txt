@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.12)
+
+project(CRHPCS_basics LANGUAGES C CXX)
+
+find_package(Kokkos REQUIRED)
+
+
+add_subdirectory(1.initialization/)
+add_subdirectory(5.views/)
+add_subdirectory(6.mirror_view/)
+add_subdirectory(7.parallel_for/)
+add_subdirectory(heat_simulation/)
+add_subdirectory(matmul/)
+add_subdirectory(pi_leibniz/)
+add_subdirectory(k_means/)
+add_subdirectory(Spmv/)
+if(NOT Kokkos_ENABLE_CUDA)
+message("Generating CPU only examples...")
+  add_subdirectory(2.functors/)
+  add_subdirectory(3.lambda/)
+  add_subdirectory(4.lambda_correct/)
+else()
+  add_subdirectory(cpu_vs_gpu/)
+message("Skipping CPU only examples...")
+endif()

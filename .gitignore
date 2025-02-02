@@ -1,0 +1,13 @@
+build/
+.vscode/
+*swp
+.cache
+*.vts*
+*.pvts*
+*.pvtu*
+*.pvtp*
+*.vtu*
+*.vtp*
+*particles.tar.gz*
+*.vtk*
+*std*
